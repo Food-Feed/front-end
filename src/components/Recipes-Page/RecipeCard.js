@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useHistory } from "react-router-dom";
 import { Button, Icon } from 'semantic-ui-react'
-import ButtonExampleToggle from './FavoriteButton'
 
 export default function RecipeCard(props) {
     console.log(props.recipeInfo)

@@ -8,5 +8,6 @@ export default function Comment(props) {
             <p>{props.comment.user_name}</p>
             <p>{props.comment.content}</p>
         </div>
+        
     )
 }

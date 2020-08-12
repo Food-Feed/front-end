@@ -21,6 +21,22 @@ export default function CommentContainer(props) {
         ))
     }
 
+    const handleDelete = () => {
+        const token = localStorage.getItem("token")
+        fetch(`http://localhost:3000/recipes/${props.match.params.id}`, {
+          method: "DELETE",
+          headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`,
+              "Accept": "application/json"
+          }
+        })
+          .then((r) => r.json())
+          .then(deletedComment => {
+            console.log(deletedComment)
+          })
+    }
+
     return (
         <div className="comment-container">
             <h5>Comments:</h5>
@@ -34,6 +50,12 @@ export default function CommentContainer(props) {
                 setFormState={setFormState}
                 recipe={props.recipe}
             />
+            {state.user_id == props.user.id && (
+              <>
+                <button>Edit Recipe</button>
+                <button onClick={handleDelete}>Delete Recipe</button>
+              </>
+            )}
         </div>
     )
 }
