@@ -12,7 +12,15 @@ export default function RecipeDetail(props) {
     console.log("comm", comment);
 
     useEffect(() => {
-      fetch(`http://localhost:3000/recipes/${props.match.params.id}`)
+      const token = localStorage.getItem("token")
+      fetch(`http://localhost:3000/recipes/${props.match.params.id}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`,
+            "Accept": "application/json"
+        }
+      })
         .then((r) => r.json())
         .then((recipeObj) => {
           setState(recipeObj);
@@ -31,7 +39,7 @@ export default function RecipeDetail(props) {
             <hr></hr>
             <RatingExampleClearable />
             <hr></hr>
-            <CommentContainer comments={state.comments}/>
+            <CommentContainer recipe={state} comments={state.comments}/>
         </div>
     )
 }

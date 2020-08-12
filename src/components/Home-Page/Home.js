@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-export default function RecipeContainer() {
+export default function RecipeContainer(props) {
+    console.log(props);
 
     return (
         <div>
@@ -13,5 +14,5 @@ export default function RecipeContainer() {
                 </section>
             </section>
         </div>
-    )
+    );
 }

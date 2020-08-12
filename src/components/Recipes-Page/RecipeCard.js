@@ -23,7 +23,7 @@ export default function RecipeCard(props) {
         <div className="recipe-card">
             <h4>{props.recipeInfo.title}</h4>
             <img src={props.recipeInfo.image} alt="recipe closeup" className="recipe-image" onClick={handleClick}></img>
-            <ButtonExampleToggle id="heart" favorited={props.recipeInfo.favorited}/>
+            {/* <ButtonExampleToggle id="heart" favorited={props.recipeInfo.favorited}/> */}
         </div>
     )
 }
