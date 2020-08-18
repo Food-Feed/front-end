@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components';
 
 export default function AddRecipe(props) {
 
@@ -77,6 +78,7 @@ export default function AddRecipe(props) {
                         <input type="submit"/>
                     </form>
                     <button
+                        type="button"
                         onClick={displayFormHandler}
                         className=""
                     >
@@ -86,9 +88,9 @@ export default function AddRecipe(props) {
                 ) : (
                 <button
                     onClick={displayFormHandler}
-                    className=""
+                    className="add-recipe-button"
                 >
-                    Add Recipe
+                    +
                 </button>
             )}
         </>

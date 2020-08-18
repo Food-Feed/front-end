@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button, Form } from 'semantic-ui-react'
+import RecipeDetail from './RecipeDetail';
+import './RecipeDetail.css'
 
 export default function AddComment(props) {
     // console.log(props.recipe)
@@ -47,7 +49,7 @@ export default function AddComment(props) {
             <div className="form">
                 <Form onSubmit={handleCommentCreation}>
                     <Form.Field>
-                    <label>New Comment</label>
+                    <label id="new-comment-text">New Comment</label>
                     <input placeholder='Add your comment here...' />
                     </Form.Field>
                     <Button type='submit'>Submit</Button>

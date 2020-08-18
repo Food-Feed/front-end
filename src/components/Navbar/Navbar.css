@@ -1,43 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
 .nav {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: transparent;
+    background-color: #a16871;
     position: fixed;
     width: 100%;
-    /* z-index: 100; */
+    z-index: 1;
 }
 
 .nav img {
     width: 100px;
+    margin: 2px;
 }
 
 .nav-scrolled {
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
-    background-color: lightblue;
+    background-color: #c9a2a5;
     position: fixed;
     width: 100%;
+    z-index: 100;
 }
 
 .nav-scrolled img {
     width: 100px;
+    margin: 2px;
 }
 
 .nav-button {
-    background-color: transparent;
-    padding: 10px;
-    border-radius: 5px;
+    background-color: #6d4649;
+    padding: 8px 15px;
+    border-radius: 20px;
     margin: 2px;
-    color: black;
+    color: white;
     font-weight: bold;
+    margin-right: 15px;
+    font-size: .9rem;
+    font-family: "Manrope", Helvetica, sans-serif;
+    font-weight: 600;
 }
 
 .nav-button:hover {
-    background-color: black;
+    background-color: #532d27;
     color: white;
     font-weight: bold;
 }

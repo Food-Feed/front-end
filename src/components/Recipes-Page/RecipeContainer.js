@@ -17,6 +17,18 @@ export default function RecipeContainer() {
         description: "",
     });
 
+    // const showEditForm = (recipeObj) => {
+    //     setRecipeId(recipeObj.id);
+    //     setRecipeForm(true);
+    //     setFormState({
+    //         image: recipeObj.image,
+    //         video: recipeObj.video,
+    //         title: recipeObj.title,
+    //         ingred_list: recipeObj.ingred_list,
+    //         description: recipeObj.description,
+    //     });
+    // }
+
     useEffect(() => {
         const token = localStorage.getItem("token")
         fetch('http://localhost:3000/recipes', {
@@ -38,14 +50,20 @@ export default function RecipeContainer() {
             <RecipeCard 
                 key={recipe.id} 
                 recipeInfo={recipe}
+                // showForm={showEditForm}
                 // recipeSetState={setState}
             />
         ))
     }
 
     return (
-        <div>
-            <h2>All Recipes</h2>
+        <div className="recipes-container">
+            <div id="spacer" />
+            <img src=""></img>
+            <p id="all-recipes-header">All Recipes</p>
+            <section className="recipe-cards">
+                {state.length > 0 && renderRecipe()}
+            </section>
             <AddRecipe 
                 recipeForm={recipeForm}
                 renderNewRecipe={setState}
@@ -55,9 +73,6 @@ export default function RecipeContainer() {
                 setIsNew={setRecipeId}
                 setFormState={setFormState}
             />
-            <section className="recipe-cards">
-                {state.length > 0 && renderRecipe()}
-            </section>
         </div>
     )
 }

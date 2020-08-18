@@ -39,8 +39,10 @@ export default function CommentContainer(props) {
 
     return (
         <div className="comment-container">
-            <h5>Comments:</h5>
-            {props.comments && renderComments()}
+            <p id="comment-title">Comments:</p>
+            <section id="comments-list">
+                {props.comments && renderComments()}
+            </section>
             <AddComment 
                 commentForm={commentForm}
                 renderNewComment={setState}

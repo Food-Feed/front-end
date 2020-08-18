@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
+import { useHistory } from "react-router-dom";
+import './Login.css'
 
 export default function Login(props){
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const history = useHistory();
 
     const handleUsernameChange = (evt) => {
         setUsername(evt.target.value)
@@ -31,6 +34,8 @@ export default function Login(props){
         .then(data => {
             localStorage.setItem("token", data.jwt)
             props.handleLogin(data.user)
+            history.push('/home')
+
         })
         // setUsername("")
         // setPassword("")
@@ -38,25 +43,26 @@ export default function Login(props){
     const formDivStyle = {
         margin: "auto",
         padding: "20px",
-        width: "80%"
+        width: "50%",
     }
     return(
         <div>
-            <div style={formDivStyle}>
-            <h1>Log In</h1>
-            <form class="ui form" onSubmit={handleSubmit}>
-                <div class="field">
-                    <label>Username</label>
-                    <input value={username} onChange={handleUsernameChange} type="text" placeholder="username"/>
-                </div>
-                <div class="field">
-                    <label>Password</label>
-                    <input value={password} onChange={handlePasswordChange} type="password" placeholder="password"/>
-                </div>
-                
-                <button class="ui button" type="submit">Submit</button>
-            </form>
-        </div>
+            <div id="spacer" />
+            <div style={formDivStyle} className="login-form">
+                <h1>Log In</h1>
+                <form className="ui form" onSubmit={handleSubmit}>
+                    <div className="field">
+                        <label>Username</label>
+                        <input value={username} onChange={handleUsernameChange} type="text" placeholder="username"/>
+                    </div>
+                    <div className="field">
+                        <label>Password</label>
+                        <input value={password} onChange={handlePasswordChange} type="password" placeholder="password"/>
+                    </div>
+                    
+                    <button className="ui button" type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     )
 } 

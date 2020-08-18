@@ -1,34 +1,85 @@
-.recipe-image {
-    max-width: 250px;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+html * {
+    font-family: "Manrope", Helvetica, sans-serif;
 }
 
-.photo-box {
-    position: relative;
-    z-index: -100;
+#spacer {
+    height: 80px;
 }
 
-.text {
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    top: calc(45% - 24px);
+.recipes-container {
+    background-color: #C9A2A550;
+    height: 100vh;
 }
 
-.text img {
-    width: 400px;
-    margin-bottom: -30px;
+#all-recipes-header {
+    font-family: "Manrope", Helvetica, sans-serif;
+    font-size: 3.5vw;
+    font-weight: 700;
+    text-align: left;
+    margin-left: 60px;
+    margin-top: 30px;
+    color: #532d27;
+}
+
+.add-recipe-button {
+    background-color: #C9A2A580;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border-style: none;
+    color: #532d27;
+    font-weight: 700;
+    font-size: 1.5rem;
+    cursor: pointer;
+    float: left;
+    margin-left: 60px;
+    margin-top: 50px;
+}
+
+.add-recipe-button:hover {
+    background-color: #C9A2A5;
+    color: #351921;
+    font-weight: bold;
 }
 
 .recipe-cards {
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: auto;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 .recipe-card {
-    background-color: lightblue;
+    /* background-color: lightblue; */
     margin: 5px;
     cursor: pointer;
-    padding: 10px 0;
-    border-radius: 15px;
+    /* padding: 10px 0; */
+    text-align: left;
+}
+
+.recipe-title {
+    margin-top: 5px;
+    font-weight: 600;
+    font-family: "Manrope", Helvetica, sans-serif;
+    font-size: .9rem;
+}
+
+.recipe-title:hover {
+    font-style: bold;
+}
+
+.recipe-image {
+    border-style: none;
+    border-radius: 20px;
+    /* width: 300px; 
+    height: 250px; 
+    object-fit: cover; */
+}
+
+.recipe-image:hover {
+    border-style: none;
+    border-radius: 20px;
+    opacity: .5;
 }

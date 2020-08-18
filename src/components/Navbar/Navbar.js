@@ -24,7 +24,7 @@ export default function Navbar(props) {
 
     const renderSignedInNav = () => {
         return <>
-            <Link to="/home"><img src="https://res.cloudinary.com/hsk23/image/upload/v1597112868/Food%20Feed/foodfeedlogo_black.001_rjimql.png" alt="food-feed"></img></Link>
+            <Link to="/home"><img src="https://res.cloudinary.com/hsk23/image/upload/v1597638788/Food%20Feed/foodfeed_logo_white.001_w5kwhm.png" alt="food-feed"></img></Link>
             {/* <a href="/home"><img src="https://res.cloudinary.com/hsk23/image/upload/v1597112868/Food%20Feed/foodfeedlogo_black.001_rjimql.png" alt="food-feed"></img></a> */}
             <section id="nav-buttons">
                 <Link to="/recipes" className="nav-button">Recipes</Link>
@@ -35,7 +35,7 @@ export default function Navbar(props) {
 
     const renderSignedOutNav = () => {
         return <>
-            <a href="/home"><img src="https://res.cloudinary.com/hsk23/image/upload/v1597112868/Food%20Feed/foodfeedlogo_black.001_rjimql.png" alt="food-feed"></img></a>
+            <a href="/home"><img src="https://res.cloudinary.com/hsk23/image/upload/v1597638788/Food%20Feed/foodfeed_logo_white.001_w5kwhm.png" alt="food-feed"></img></a>
             <br/>
             <Link to="/login" className="nav-button" onClick={handleLoginClick}>Log In</Link>
             <Link to="/signup" className="nav-button" onClick={handleSignupClick}>Sign Up</Link>

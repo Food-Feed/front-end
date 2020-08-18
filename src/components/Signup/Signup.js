@@ -1,10 +1,13 @@
 import React, {useState} from 'react'
+import { useHistory } from "react-router-dom";
+import './Signup.css'
 
 export default function Signup(props) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
+    const history = useHistory();
 
     const handleUsernameChange = (evt) => {
         setUsername(evt.target.value)
@@ -24,12 +27,12 @@ export default function Signup(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const token = localStorage.getItem("token")
+        // const token = localStorage.getItem("token")
         fetch(`http://localhost:3000/users`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`,
+                // "Authorization": `Bearer ${token}`,
                 "Accept": "application/json"
             },
             body: JSON.stringify({
@@ -43,6 +46,7 @@ export default function Signup(props) {
         .then(data => {
             localStorage.setItem("token", data.jwt)
             props.handleLogin(data.user)
+            history.push('/home')
         })
         // setUsername("")
         // setPassword("")
@@ -57,6 +61,7 @@ export default function Signup(props) {
     
     return(
         <div style={formDivStyle}>
+            <div id="spacer" />
             <h1>Sign Up</h1>
             <form className="ui form" onSubmit={handleSubmit}>
                 <div className="field">

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+html * {
+    font-family: "Manrope", Helvetica, sans-serif;
+}
+
+#spacer {
+    height: 80px;
+}
+
+#recipe-info-box {
+    display: grid;
+    margin: 0 60px 0 60px;
+    text-align: left;
+    color: #532d27;
+}
+
+.recipe-detail-container {
+    background-color: #C9A2A550;
+    height: 100vh;
+    display: grid;
+}
+
+#recipe-title {
+    font-size: 3.5vw;
+    font-weight: 700;
+    text-align: left;
+    margin-left: 60px;
+    margin-top: 30px;
+    color: #532d27;
+}
+
+#recipe-author {
+    text-align: left;
+    margin-left: 60px;
+    margin-top: -30px; 
+    font-size: 1.75vw;
+    font-weight: 500;
+    color: #532d27;
+}
+
+video {
+    margin-left: 60px;
+}
+
+/* #recipe-image {
+    width: 100vw; 
+    height: 400px; 
+    object-fit: cover;
+} */
+
+/* #button-container { */
+    /* margin-left: 60px; */
+    /* background-color: #C9A2A550; */
+/* } */
+
+#recipe-detail-title {
+    text-align: left;
+    /* margin: 30px 0 30px 60px; */
+    font-size: 1.75vw;
+    font-weight: 700;
+}
+
+.buttons {
+    background-color: #C9A2A580;
+    padding: 10px 12px;
+    border-radius: 20px;
+    border-style: none;
+    color: #532d27;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.buttons img {
+    width: 20px;
+}
+
+.buttons:hover {
+    background-color: #C9A2A5;
+    color: #351921;
+    font-weight: bold;
+}
+
+/* COMMENTS SECTION */
+
+.comment-container {
+    background-color: #C9A2A550;
+    /* height: 100; */
+}
+
+.form {
+    width: 75%;
+    /* margin-left: 60px 30px ; */
+    margin: 30px 0 60px 30px;
+}
+
+#new-comment-text {
+    text-align: left;
+}
+
+#comment-title {
+    text-align: left;
+    margin: 30px 0 30px 60px;
+    font-size: 1.75vw;
+    font-weight: 700;
+}
+
+#comments-list {
+    text-align: left;
+    margin-left: 60px;
+}
