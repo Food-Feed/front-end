@@ -45,7 +45,7 @@ html * {
 
 .recipe-cards {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 25% 25% 25% 25% min-content;
     grid-template-rows: auto;
     margin-left: 60px;
     margin-right: 60px;
@@ -73,6 +73,7 @@ html * {
 .recipe-image {
     border-style: none;
     border-radius: 20px;
+    max-width: 250px;
     /* width: 300px; 
     height: 250px; 
     object-fit: cover; */

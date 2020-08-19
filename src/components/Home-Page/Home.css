@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
-
-.recipe-image {
-    max-width: 250px;
-
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 
 /* WELCOME SECTION */
 
@@ -15,10 +10,13 @@
 }
 
 .photo-box img {
-    opacity: 70%;
-    margin-left: 39%;
+    opacity: 80%;
+    /* margin-left: 39%; */
     /* right: calc(2% - 24px); */
     /* width: 60vw; */
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
 }
 
 .text {
@@ -27,22 +25,24 @@
     text-align: left;
     /* width: 100%; */
     line-height: 10pt;
-    top: calc(35% - 24px);
+    top: calc(70% - 24px);
 }
 
 #welcome-text {
     font-size: 9vw;
-    font-family: "Manrope", Helvetica, sans-serif;
-    font-weight: 800;
+    font-family: "Prata", Georgia, serif;
+    /* font-weight: 400; */
+    font-weight: bold;
     color: white;
 }
 
 #cook-text {
-    font-size: 4vw;
+    font-size: 3vw;
     font-family: "Manrope", Helvetica, sans-serif;
     font-weight: 600;
     color: white;
     margin-top: -100px;
+    margin-left: 20px;
 }
 
 #welcome-text:hover {
@@ -65,7 +65,7 @@
 
 #mission-header {
     text-align: left;
-    margin-left: 200px;
+    margin-left: 150px;
     margin-top: 100px;
     font-family: "Manrope", Helvetica, sans-serif;
     font-size: 3.5vw;
@@ -75,7 +75,7 @@
 
 #mission-text {
     text-align: left;
-    margin: 0px 200px 100px 200px;
+    margin: 0px 150px 100px 150px;
     font-family: "Manrope", Helvetica, sans-serif;
     font-size: 2vw;
     font-weight: 300;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Comment from './Comment'
 import AddComment from './AddComment'
+import './RecipeDetail.css'
 
 export default function CommentContainer(props) {
     const [state, setState] = useState([]);
@@ -39,7 +40,7 @@ export default function CommentContainer(props) {
 
     return (
         <div className="comment-container">
-            <p id="comment-title">Comments:</p>
+            <p className="comment-title">Comments:</p>
             <section id="comments-list">
                 {props.comments && renderComments()}
             </section>

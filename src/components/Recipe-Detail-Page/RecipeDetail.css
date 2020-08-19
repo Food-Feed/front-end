@@ -6,62 +6,135 @@ html * {
 
 #spacer {
     height: 80px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
-#recipe-info-box {
-    display: grid;
-    margin: 0 60px 0 60px;
-    text-align: left;
+/* #recipe-info-box {
     color: #532d27;
-}
+} */
 
 .recipe-detail-container {
     background-color: #C9A2A550;
-    height: 100vh;
     display: grid;
+    grid-template-columns: 550px 50%;
+    grid-template-rows: 80px 50px 30px 5% 400px 5% auto;
+    justify-content: start;
 }
 
 #recipe-title {
-    font-size: 3.5vw;
+    font-size: 3vw;
     font-weight: 700;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
     text-align: left;
     margin-left: 60px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     color: #532d27;
 }
 
 #recipe-author {
     text-align: left;
     margin-left: 60px;
-    margin-top: -30px; 
-    font-size: 1.75vw;
+    /* margin-top: -30px;  */
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    font-size: 1.5vw;
     font-weight: 500;
     color: #532d27;
+    align-self: start;
 }
 
 video {
-    margin-left: 60px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    /* margin-left: 60px; */
+    justify-self: center;
+    border-radius: 20px;
 }
 
-/* #recipe-image {
-    width: 100vw; 
-    height: 400px; 
-    object-fit: cover;
+.voice-button {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    width: 200px;
+    height: 20px;
+    margin-left: 100px;
+    align-self: end;
+}
+
+/* #ingred-steps-container {
+    display: grid; */
+    /* grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 90%; */
+/* } */
+/* 
+.ingredients-container {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 6;
 } */
 
-/* #button-container { */
-    /* margin-left: 60px; */
-    /* background-color: #C9A2A550; */
-/* } */
-
-#recipe-detail-title {
-    text-align: left;
-    /* margin: 30px 0 30px 60px; */
+#ingredients-title {
+    /* text-align: left; */
     font-size: 1.75vw;
     font-weight: 700;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    align-self: end;
+    justify-self: start;
+}
+
+#recipe-ingred-list {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    text-align: left;
+    font-size: 1.25rem;
+    line-height: 30px;
+}
+
+#directions-title {
+    /* text-align: left; */
+    font-size: 1.75vw;
+    font-weight: 700;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    justify-self: start;
+    align-self: end;
+    margin: 0px;
+}
+
+#recipe-directions-list {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 7;
+    grid-row-end: 8;
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 30px;
 }
 
 .buttons {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
     background-color: #C9A2A580;
     padding: 10px 12px;
     border-radius: 20px;
@@ -70,9 +143,8 @@ video {
     font-weight: 700;
     font-size: 1rem;
     cursor: pointer;
-    float: left;
-    margin-right: 10px;
-    margin-top: 10px;
+    justify-self: start;
+    margin-right: 20px;
 }
 
 .buttons img {
@@ -88,28 +160,41 @@ video {
 /* COMMENTS SECTION */
 
 .comment-container {
-    background-color: #C9A2A550;
-    /* height: 100; */
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 6;
+    grid-row-end: 8;
+    margin-top: 30px;
 }
 
 .form {
     width: 75%;
-    /* margin-left: 60px 30px ; */
-    margin: 30px 0 60px 30px;
+    margin-left: 30px;
+    /* margin: 30px 0 60px 30px; */
 }
 
 #new-comment-text {
     text-align: left;
 }
 
-#comment-title {
+.comment-title {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 6;
+    grid-row-end: 7;
     text-align: left;
-    margin: 30px 0 30px 60px;
+    margin-left: 60px;
     font-size: 1.75vw;
     font-weight: 700;
+    align-self: end;
+    margin-bottom: 0px;
 }
 
 #comments-list {
     text-align: left;
     margin-left: 60px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 7;
+    grid-row-end: 8;
 }

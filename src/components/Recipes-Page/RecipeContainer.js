@@ -13,8 +13,8 @@ export default function RecipeContainer() {
         image: "",
         video: "",
         title: "",
-        ingred_list: "",
-        description: "",
+        // ingred_list: "",
+        // description: "",
     });
 
     // const showEditForm = (recipeObj) => {
@@ -42,6 +42,7 @@ export default function RecipeContainer() {
             .then(r => r.json())
             .then(recipesArray => {
                 setState(recipesArray)
+                console.log(recipesArray)
             });
     }, []);
 

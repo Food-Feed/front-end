@@ -1,16 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, component } from 'react'
 import RatingExampleClearable from './AverageRating'
 import CommentContainer from './CommentContainer'
 import { useHistory } from 'react-router-dom'
 import EditRecipe from './EditRecipe'
 import './RecipeDetail.css'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
+import ReactHover from 'react-hover'
+
+// HOVER STATE 
+
+const optionsCursorTrueWithMargin = {
+  followCursor: true,
+  shiftX:20,
+  shiftY:0
+}
 
 export default function RecipeDetail(props) {
     // console.log(props)
     const [state, setState] = useState({});
     const [comment, setComment] = useState({});
     const [showEditForm, setShowEditForm] = useState(false); 
+    const [voiceOn, setVoiceOn] = useState(false); 
 
     const user = props.user
     // console.log(state)
@@ -31,27 +41,13 @@ export default function RecipeDetail(props) {
           setState(recipeObj);
         });
     }, []);
-    console.log(state)
+    console.log(state.ingredients)
     
 
     // **** VOICE COMMAND SECTION **** //
 
-    // const getVideo = () => {
-    //   let video = document.getElementById('video')
-    //   return video;
-    // }
     let video = document.getElementById('video')
     console.log(video)
-
-    // document.addEventListener('DOMContentLoaded', function() {
-    //   let playButton = document.querySelector('[aria-label="play"]')
-    //   console.log(playButton)
-    // });
-
-    // const getPlayButton = () => {
-    //   let playButton = document.querySelector('[aria-label="play"]')
-    //   console.log(playButton)
-    // }
 
     const commands = [
       {
@@ -83,6 +79,7 @@ export default function RecipeDetail(props) {
         callback: ({ resetTranscript }) => resetTranscript()
       }
     ]
+
     const { transcript, resetTranscript } = useSpeechRecognition({ commands })
     console.log(transcript)
 
@@ -92,6 +89,12 @@ export default function RecipeDetail(props) {
 
     const listen = () => {
       SpeechRecognition.startListening({ continuous: true })
+      setVoiceOn(true)
+    }
+
+    const stopListening = () => {
+      SpeechRecognition.stopListening()
+      setVoiceOn(false)
     }
 
 
@@ -135,30 +138,29 @@ export default function RecipeDetail(props) {
         })
     }
 
+    const renderIngredients = () => {
+      const ingredientsArray = state.ingredients
+      console.log(ingredientsArray)
+      return ingredientsArray.map((ingredient) => (
+        // console.log(ingredient)
+        <li>{ingredient.text}</li>
+      ))
+    }
+
+    const renderRecipeSteps = () => {
+      const recipeStepsArray = state.recipe_steps
+      return recipeStepsArray.map((step => (
+        <li>{step.text}</li>
+      )))
+    }
+
     return (
         <div className="recipe-detail-container">
             <div id="spacer" />
             {/* <img src={state.image} alt="recipe image" id="recipe-image"/> */}
             <p id="recipe-title">{state.title}</p>
             <p id="recipe-author">By: {user.name}</p>
-            <br></br>
-
-
-            <video controls width="250" src={state.video} id="video"></video>
-            <section id="recipe-info-box">
-              <section id="voice-buttons">
-                <button onClick={listen} className="buttons">Turn On Voice Command</button>
-                <button onClick={SpeechRecognition.stopListening} className="buttons">Turn Off Voice Command</button>
-                {/* <p>{transcript}</p> */}
-              </section>
-              <br></br>
-              <p id="recipe-detail-title">Ingredient List:</p>
-              <p id="recipe-ingred-list">{state.ingred_list}</p>
-              <br></br>
-              <p id="recipe-detail-title">Description:</p>
-              <p id="recipe-description">{state.description}</p>
-              {/* <br></br> */}
-              <span id="button-container">
+            <span id="button-container">
                 {state.user_id === user.id && (
                   <>
                     <EditRecipe
@@ -166,12 +168,36 @@ export default function RecipeDetail(props) {
                         recipeObj={state}
                         setShowEditForm={setShowEditForm}
                     />
-                    {/* <button onClick={handleEdit}>Edit Recipe</button> */}
                     <button onClick={handleDelete} className="buttons"><img src="https://res.cloudinary.com/hsk23/image/upload/v1597717386/Food%20Feed/3058-200_gkxsdp.png" width="20%"/></button>
+                    {/* <button onClick={handleEdit}>Edit Recipe</button> */}
                   </>
                 )}
               </span>
-            </section>
+            <br></br>
+
+
+            <video controls width="400" src={state.video} id="video"></video>
+            {!voiceOn ? <button onClick={listen} className="voice-button">Turn On Voice Command</button> : <button onClick={stopListening} className="voice-button">Turn Off Voice Command</button>}
+            {/* <section> */}
+              {/* <section> */}
+              {/* </section> */}
+              <br></br>
+              {/* <section id="ingred-steps-container"> */}
+                <p id="ingredients-title">Ingredient List:</p>
+                <ul id="recipe-ingred-list">
+                  {state.ingredients && renderIngredients()}
+                </ul>
+                {/* <p id="recipe-ingred-list">{state.ingred_list}</p> */}
+                <br></br>
+                  <p id="directions-title">Directions:</p>
+                  <ol id="recipe-directions-list">
+                    {state.recipe_steps && renderRecipeSteps()}
+                  </ol>
+              {/* </section> */}
+              {/* <p id="recipe-description">{state.description}</p> */}
+              {/* <br></br> */}
+              
+            {/* </section> */}
             <hr></hr>
             {/* <RatingExampleClearable /> */}
             {/* <hr></hr> */}
