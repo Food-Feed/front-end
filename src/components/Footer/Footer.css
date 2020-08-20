@@ -6,15 +6,19 @@
     bottom: 0;
     width: 100%;
     padding: 10px;
-    /* font-size: .9rem; */
+    font-size: .8rem;
     font-family: "Manrope", Helvetica, sans-serif;
     font-weight: 500;
-    text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 100px;
 }
 
 .footer a {
     color: #532d27;
     margin-right: 10px;
+    align-self: right;
 }
 
 .footer a:hover {

@@ -157,6 +157,26 @@ video {
     font-weight: bold;
 }
 
+
+/* EDIT FORM SECTION */
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(255, 255, 255); /* Fallback color */
+    background-color: rgba(255, 255, 255, 0.8); /* Black w/ opacity */
+}
+
+#edit-form-title {
+    margin-top: 80px;
+}
+
+
 /* COMMENTS SECTION */
 
 .comment-container {
@@ -171,6 +191,10 @@ video {
     width: 75%;
     margin-left: 30px;
     /* margin: 30px 0 60px 30px; */
+}
+
+.comment {
+    margin: 40px 0 40px 0;
 }
 
 #new-comment-text {

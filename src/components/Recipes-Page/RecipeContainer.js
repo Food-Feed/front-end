@@ -3,16 +3,20 @@ import RecipeCard from './RecipeCard'
 import AddRecipe from './AddRecipe'
 // import { Link } from 'react-router-dom'
 import './Recipes.css'
+import LoadingBar from './LoadingBar';
 
 export default function RecipeContainer() {
     const [state, setState] = useState([]);
     const [recipeForm, setRecipeForm] = useState(false);
-    const [recipeId, setRecipeId] = useState("");
+    // const [recipeId, setRecipeId] = useState("");
+    const [loadBarOn, setLoadBarOn] = useState(false);
 
     const [formState, setFormState] = useState({
         image: "",
         video: "",
         title: "",
+        ingredients: [{ingred_detail: ''}],
+        recipe_steps: [{step_detail: ''}]
         // ingred_list: "",
         // description: "",
     });
@@ -57,22 +61,30 @@ export default function RecipeContainer() {
         ))
     }
 
+    const activateLoadBar = () => {
+        // return <LoadingBar />
+        console.log("hi")
+        setLoadBarOn(true)
+    }
+
     return (
         <div className="recipes-container">
             <div id="spacer" />
             <img src=""></img>
             <p id="all-recipes-header">All Recipes</p>
+            {/* <LoadingBar /> */}
             <section className="recipe-cards">
                 {state.length > 0 && renderRecipe()}
             </section>
             <AddRecipe 
                 recipeForm={recipeForm}
                 renderNewRecipe={setState}
-                recipeId={recipeId}
                 formState={formState}
                 setRecipeForm={setRecipeForm}
-                setIsNew={setRecipeId}
                 setFormState={setFormState}
+                className="add-recipe-form"
+                activateLoadBar={activateLoadBar}
+                loadBarOn={loadBarOn}
             />
         </div>
     )

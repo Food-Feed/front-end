@@ -41,13 +41,13 @@ export default function RecipeDetail(props) {
           setState(recipeObj);
         });
     }, []);
-    console.log(state.ingredients)
+    console.log(state)
     
 
     // **** VOICE COMMAND SECTION **** //
 
     let video = document.getElementById('video')
-    console.log(video)
+    // console.log(video)
 
     const commands = [
       {
@@ -124,6 +124,8 @@ export default function RecipeDetail(props) {
       form.append("title", recipeObj.title)
       form.append("ingred_list", recipeObj.ingred_list)
       form.append("description", recipeObj.description)
+      form.append("ingredients", JSON.stringify(recipeObj.ingredients))
+      form.append("recipe_steps", JSON.stringify(recipeObj.recipe_steps))
       fetch(`http://localhost:3000/recipes/${props.match.params.id}`, {
         method: "PATCH",
         headers: {
@@ -133,24 +135,24 @@ export default function RecipeDetail(props) {
       })
         .then((r) => r.json())
         .then(updatedRecipe => {
-          console.log(updatedRecipe)
+          // console.log(updatedRecipe)
           setState(updatedRecipe)
         })
     }
 
     const renderIngredients = () => {
-      const ingredientsArray = state.ingredients
-      console.log(ingredientsArray)
+      const ingredientsArray = state.ingredients.sort()
+      // console.log(ingredientsArray)
       return ingredientsArray.map((ingredient) => (
         // console.log(ingredient)
-        <li>{ingredient.text}</li>
+        <li>{ingredient.ingred_detail}</li>
       ))
     }
 
     const renderRecipeSteps = () => {
-      const recipeStepsArray = state.recipe_steps
+      const recipeStepsArray = state.recipe_steps.sort()
       return recipeStepsArray.map((step => (
-        <li>{step.text}</li>
+        <li>{step.step_detail}</li>
       )))
     }
 
@@ -159,14 +161,14 @@ export default function RecipeDetail(props) {
             <div id="spacer" />
             {/* <img src={state.image} alt="recipe image" id="recipe-image"/> */}
             <p id="recipe-title">{state.title}</p>
-            <p id="recipe-author">By: {user.name}</p>
+            <p id="recipe-author">By: {state.author}</p>
             <span id="button-container">
                 {state.user_id === user.id && (
                   <>
                     <EditRecipe
                         handleUpdate={handleUpdate}
                         recipeObj={state}
-                        setShowEditForm={setShowEditForm}
+                        // setShowEditForm={setShowEditForm}
                     />
                     <button onClick={handleDelete} className="buttons"><img src="https://res.cloudinary.com/hsk23/image/upload/v1597717386/Food%20Feed/3058-200_gkxsdp.png" width="20%"/></button>
                     {/* <button onClick={handleEdit}>Edit Recipe</button> */}
@@ -201,7 +203,7 @@ export default function RecipeDetail(props) {
             <hr></hr>
             {/* <RatingExampleClearable /> */}
             {/* <hr></hr> */}
-            <CommentContainer user={props.user} recipe={state} comments={state.comments}/>
+            <CommentContainer user={props.user} recipe={state} comments={state.comments} setState={setState}/>
         </div>
     )
 }

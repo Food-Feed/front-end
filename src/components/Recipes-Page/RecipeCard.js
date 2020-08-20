@@ -5,7 +5,7 @@ import RecipeDetail from '../Recipe-Detail-Page/RecipeDetail';
 import './Recipes.css'
 
 export default function RecipeCard(props) {
-    console.log(props)
+    // console.log(props)
     const history = useHistory();
 
     // const handleClick = () => {
