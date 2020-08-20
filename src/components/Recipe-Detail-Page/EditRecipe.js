@@ -136,17 +136,17 @@ export default function EditRecipe(props) {
                         <label>Video Upload</label>
                         <input type="file" name="video" onChange={changeHandlerFiles} value={state.video}/>
                         <br/> */}
-                        <label>Title:</label>
-                        <input type="text" name="title" onChange={changeHandler} value={state.title}/>
+                        <label id="form-section-title">Title:</label><br/>
+                        <input type="text" name="title" onChange={changeHandler} value={state.title} className="form-field-ingred"/>
                         <br/>
-                        <label>Ingredients:</label>
+                        <label id="form-section-title">Ingredients:</label>
                         {state.ingredients.map((ingredient, index) => (
                             <Fragment key={`${ingredient}~${index}`}>
                                 <div>
-                                    <label htmlFor="ingred_detail">Ingredient</label>
+                                    <label id="ingred_detail">Ingredient</label><br/>
                                     <input
                                         type="text"
-                                        // className="form-control"
+                                        className="form-field-ingred"
                                         id={"ingred_detail"}
                                         name="ingred_detail"
                                         value={ingredient.ingred_detail}
@@ -171,14 +171,14 @@ export default function EditRecipe(props) {
                         ))}
                         {/* <input type="textarea" name="ingredients" onChange={changeHandler} value={state.ingred_list}/> */}
                         <br/>
-                        <label>Directions:</label>
+                        <label id="form-section-title">Directions:</label>
                         {state.recipe_steps.map((recipe_step, index) => (
                             <Fragment key={`${recipe_step}~${index}`}>
                                 <div>
-                                    <label htmlFor="recipe_step">Step</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
+                                    <label htmlFor="recipe_step">Step</label><br/>
+                                    <textarea
+                                        type="textarea"
+                                        className="form-field-step"
                                         id="recipe_step"
                                         name="recipe_step"
                                         value={recipe_step.step_detail}
@@ -203,7 +203,7 @@ export default function EditRecipe(props) {
                         ))}
                         {/* <input type="textarea" name="recipe_steps" onChange={changeHandler} value={state.description}/> */}
                         <br/>
-                        <input type="submit"/>
+                        <input type="submit" className="buttons"/>
                     </form>
                     <button
                         onClick={displayFormHandler}

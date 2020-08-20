@@ -46,9 +46,9 @@ export default function Login(props){
         width: "50%",
     }
     return(
-        <div>
+        <div style={formDivStyle}>
             <div id="spacer" />
-            <div style={formDivStyle} className="login-form">
+            <div className="login-form">
                 <h1>Log In</h1>
                 <form className="ui form" onSubmit={handleSubmit}>
                     <div className="field">

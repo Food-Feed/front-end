@@ -82,7 +82,7 @@ export default function RecipeContainer() {
                 formState={formState}
                 setRecipeForm={setRecipeForm}
                 setFormState={setFormState}
-                className="add-recipe-form"
+                className="modal"
                 activateLoadBar={activateLoadBar}
                 loadBarOn={loadBarOn}
             />

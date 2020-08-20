@@ -7,10 +7,11 @@ export default function RecipeContainer(props) {
     return (
         <div>
             <section className="photo-box">
-                <img src="https://res.cloudinary.com/hsk23/image/upload/v1597816084/Food%20Feed/DXmroY3W4AEHHxs_jkrlrl.jpg" alt="food background" width="100%" id="plate-photo"></img>
+                <img src="https://res.cloudinary.com/hsk23/image/upload/v1597909753/Food%20Feed/shutterstock_1529397620_wcmgyb.jpg" alt="food background" width="100%" id="plate-photo"></img>
                 <section className="text">
                     {/* <img src="https://res.cloudinary.com/hsk23/image/upload/v1597112868/Food%20Feed/foodfeedlogo_black.001_rjimql.png" alt="food-feed"></img> */}
                     <p id="welcome-text">Welcome.</p>
+                    <hr id="line" />
                     <p id="cook-text">Come Cook With Us</p>
                 </section>
             </section>

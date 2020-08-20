@@ -145,14 +145,14 @@ export default function RecipeDetail(props) {
       // console.log(ingredientsArray)
       return ingredientsArray.map((ingredient) => (
         // console.log(ingredient)
-        <li>{ingredient.ingred_detail}</li>
+        <p id="ingredient">{ingredient.ingred_detail}</p>
       ))
     }
 
     const renderRecipeSteps = () => {
       const recipeStepsArray = state.recipe_steps.sort()
       return recipeStepsArray.map((step => (
-        <li>{step.step_detail}</li>
+        <li id="recipe-directions-list">{step.step_detail}</li>
       )))
     }
 
@@ -180,22 +180,25 @@ export default function RecipeDetail(props) {
 
             <video controls width="400" src={state.video} id="video"></video>
             {!voiceOn ? <button onClick={listen} className="voice-button">Turn On Voice Command</button> : <button onClick={stopListening} className="voice-button">Turn Off Voice Command</button>}
+            {/* <p id="voice-instructions">Say "play", "pause", "fast-forward", "rewind", "mute", or "unmute"</p> */}
             {/* <section> */}
               {/* <section> */}
               {/* </section> */}
               <br></br>
-              {/* <section id="ingred-steps-container"> */}
+              <section id="ingred-container">
                 <p id="ingredients-title">Ingredient List:</p>
-                <ul id="recipe-ingred-list">
+                <span id="recipe-ingred-list">
                   {state.ingredients && renderIngredients()}
-                </ul>
+                </span>
                 {/* <p id="recipe-ingred-list">{state.ingred_list}</p> */}
                 <br></br>
+              </section>
+              <section id="ingred-steps-container">
                   <p id="directions-title">Directions:</p>
                   <ol id="recipe-directions-list">
                     {state.recipe_steps && renderRecipeSteps()}
                   </ol>
-              {/* </section> */}
+              </section>
               {/* <p id="recipe-description">{state.description}</p> */}
               {/* <br></br> */}
               

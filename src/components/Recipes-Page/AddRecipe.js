@@ -130,25 +130,25 @@ export default function AddRecipe(props) {
         <>
             {props.recipeForm ? (
                 <div className="modal">
-                    <h1>New Recipe</h1>
+                    <h1 id="edit-form-title">New Recipe</h1>
                     <form onSubmit={handleRecipeCreation}>
-                        <label>Image Upload:</label>
-                        <input type="file" name="image" onChange={changeHandlerFiles}/>
-                        <br/>
-                        <label>Video Upload</label>
-                        <input type="file" name="video" onChange={changeHandlerFiles}/>
-                        <br/>
-                        <label>Title:</label>
-                        <input type="text" name="title" onChange={changeHandler}/>
-                        <br/>
-                        <label>Ingredient List:</label>
+                        <label id="form-section-title">Image Upload:</label><br/>
+                        <input type="file" name="image" onChange={changeHandlerFiles} className="upload-buttons"/>
+                        <br id="break"/>
+                        <label id="form-section-title">Video Upload</label><br/>
+                        <input type="file" name="video" onChange={changeHandlerFiles} className="upload-buttons"/>
+                        <br id="break"/>
+                        <label id="form-section-title">Title:</label><br/>
+                        <input type="text" name="title" onChange={changeHandler} className="form-field-ingred"/>
+                        <br id="break"/>
+                        <label id="form-section-title">Ingredients:</label>
                         {ingredientState.map((ingredient, index) => (
                             <Fragment key={`${ingredient}~${index}`}>
                                 <div>
-                                    <label htmlFor="ingred_detail">Ingredient</label>
+                                    <label htmlFor="ingred_detail">Ingredient</label><br/>
                                     <input
                                         type="text"
-                                        // className="form-control"
+                                        className="form-field-ingred"
                                         id="ingred_detail"
                                         name="ingred_detail"
                                         value={ingredient.ingred_detail}
@@ -158,12 +158,14 @@ export default function AddRecipe(props) {
                                 <div>
                                     <button
                                         type="button"
+                                        id="add-subtr-buttons"
                                         onClick={() => handleRemoveIngredientFields(index)}
                                     >
                                         -
                                     </button>
                                     <button
                                         type="button"
+                                        id="add-subtr-buttons"
                                         onClick={() => handleAddIngredientFields()}
                                     >
                                         +
@@ -172,15 +174,15 @@ export default function AddRecipe(props) {
                             </Fragment>
                         ))}
                         {/* <input type="textarea" name="ingred_list" onChange={changeHandler}/> */}
-                        <br/>
-                        <label>Directions:</label>
+                        <br id="break"/>
+                        <label id="form-section-title">Directions:</label>
                         {recipeStepState.map((recipe_step, index) => (
                             <Fragment key={`${recipe_step}~${index}`}>
                                 <div>
-                                    <label htmlFor="recipe_step">Step</label>
+                                    <label htmlFor="recipe_step">Step</label><br/>
                                     <input
                                         type="text"
-                                        className="form-control"
+                                        className="form-field-ingred"
                                         id="recipe_step"
                                         name="recipe_step"
                                         value={recipe_step.step_detail}
@@ -190,12 +192,14 @@ export default function AddRecipe(props) {
                                 <div>
                                     <button
                                         type="button"
+                                        id="add-subtr-buttons"
                                         onClick={() => handleRemoveStepFields(index)}
                                     >
                                         -
                                     </button>
                                     <button
                                         type="button"
+                                        id="add-subtr-buttons"
                                         onClick={() => handleAddStepFields()}
                                     >
                                         +
@@ -204,13 +208,13 @@ export default function AddRecipe(props) {
                             </Fragment>
                         ))}
                         {/* <input type="textarea" name="description" onChange={changeHandler}/> */}
-                        <br/>
-                        <input type="submit"/>
+                        <br id="break"/>
+                        <input type="submit" className="buttons"/>
                     </form>
                     <button
                         type="button"
                         onClick={displayFormHandler}
-                        className=""
+                        className="buttons"
                     >
                         Cancel
                     </button>

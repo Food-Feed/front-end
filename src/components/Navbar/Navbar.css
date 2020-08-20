@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: space-between;
     /* background-color: #a16871; */
-    background-color: transparent;
+    background-color: black;
     position: fixed;
     width: 100%;
     z-index: 1;
@@ -22,7 +22,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #c9a2a5;
+    background-color: black;
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -34,7 +34,7 @@
 }
 
 .nav-button {
-    background-color: #6d4649;
+    background-color: rgba(255, 255, 255, 0.144);
     padding: 8px 15px;
     border-radius: 20px;
     margin: 2px;
@@ -47,7 +47,7 @@
 }
 
 .nav-button:hover {
-    background-color: #532d27;
+    background-color: #327532;
     color: white;
     font-weight: bold;
 }

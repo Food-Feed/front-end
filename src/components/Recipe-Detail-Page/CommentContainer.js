@@ -16,15 +16,19 @@ export default function CommentContainer(props) {
     });
 
     const renderComments = () => {
-        return props.comments.map(comment => (
-            <Comment
-                comment={comment}
-                key={comment.id}
-                user={props.user}
-                // handleUpdate={handleUpdate}
-                // handleDelete={handleDelete}
-            />
-        ))
+        if (props.comments.length > 0) {
+            return props.comments.map(comment => (
+                <Comment
+                    comment={comment}
+                    key={comment.id}
+                    user={props.user}
+                    handleUpdate={handleUpdate}
+                    handleDelete={handleDelete}
+                />
+            ))
+        } else {
+            return "Be the first one to comment!"
+        }
     }
 
     const handleDelete = () => {
@@ -43,30 +47,30 @@ export default function CommentContainer(props) {
           })
     }
 
-    // const handleUpdate = () => {
-    //     console.log(formState)
-    //     const token = localStorage.getItem("token")
-    //     fetch("http://localhost:3000/comments", {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //         "Authorization": `Bearer ${token}`,
-    //         "Accept": "application/json",
-    //     },
-    //     body: JSON.stringify(formState),
-    //     })
-    //     .then((r) => r.json())
-    //     .then((newComment) => {
-    //         console.log(newComment);
-    //         // props.setState((prevState => [...prevState, ]))
-    //         // debugger
-    //         props.setState((prevState) => ({
-    //             ...prevState,
-    //             comments: [...props.recipe.comments, newComment]
-    //         }))
-    //     })
-    //     setFormState({recipe_id: current_recipe_id, content: ""})
-    // }
+    const handleUpdate = () => {
+        console.log(formState)
+        const token = localStorage.getItem("token")
+        fetch("http://localhost:3000/comments", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`,
+            "Accept": "application/json",
+        },
+        body: JSON.stringify(formState),
+        })
+        .then((r) => r.json())
+        .then((newComment) => {
+            console.log(newComment);
+            // props.setState((prevState => [...prevState, ]))
+            // debugger
+            props.setState((prevState) => ({
+                ...prevState,
+                comments: [...props.recipe.comments, newComment]
+            }))
+        })
+        setFormState({recipe_id: current_recipe_id, content: ""})
+    }
 
     return (
         <div className="comment-container">
@@ -79,7 +83,6 @@ export default function CommentContainer(props) {
                 formState={formState}
                 setFormState={setFormState}
                 recipe={props.recipe}
-                // handleUpdate={handleUpdate}
             />
         </div>
     )
