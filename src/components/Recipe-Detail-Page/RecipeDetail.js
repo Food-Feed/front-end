@@ -6,14 +6,8 @@ import EditRecipe from './EditRecipe'
 import './RecipeDetail.css'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import ReactHover from 'react-hover'
+import { Button, Popup } from 'semantic-ui-react'
 
-// HOVER STATE 
-
-const optionsCursorTrueWithMargin = {
-  followCursor: true,
-  shiftX:20,
-  shiftY:0
-}
 
 export default function RecipeDetail(props) {
     // console.log(props)
@@ -42,6 +36,12 @@ export default function RecipeDetail(props) {
         });
     }, []);
     console.log(state)
+
+    // HOVER STATE 
+
+      const Popup = (button) => (
+        <Popup content='You can say "play", "pause", "fast-forward", "rewind", "mute", or "unmute"' trigger={button} />
+      )
     
 
     // **** VOICE COMMAND SECTION **** //
@@ -111,7 +111,7 @@ export default function RecipeDetail(props) {
         }
       })
         .then((r) => r.json())
-        .then(deletedComment => {
+        .then(deletedRecipe => {
           history.push('/recipes')
         })
     }
@@ -206,7 +206,7 @@ export default function RecipeDetail(props) {
             <hr></hr>
             {/* <RatingExampleClearable /> */}
             {/* <hr></hr> */}
-            <CommentContainer user={props.user} recipe={state} comments={state.comments} setState={setState}/>
+            <CommentContainer user={props.user} recipe={state} />
         </div>
     )
 }

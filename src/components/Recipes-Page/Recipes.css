@@ -39,6 +39,7 @@ html * {
     float: left;
     margin-left: 60px;
     margin-top: 50px;
+    margin-bottom: 100px;
 }
 
 .add-recipe-button:hover {
@@ -51,7 +52,7 @@ html * {
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
+    width: 100%;
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(255, 255, 255); /* Fallback color */
@@ -59,6 +60,7 @@ html * {
     padding: 20px;
     padding-left: 60px;
     text-align: left;
+    margin: 0 500px;
 }
 
 #add-subtr-buttons {
@@ -84,14 +86,26 @@ html * {
 .upload-buttons {
     border-style: none;
     border-radius: 5px;
+}
 
+.ui.active.transition.visible.dimmer {
+    height: 80px;
+    width: 200px;
+    background-color: #5ca85c;
+    padding: 5px;
+}
+
+.ui.segment {
+    height: 80px;
+    width: 200px;
+    padding: 5px;
 }
 
 /* RECIPE CARDS */ 
 
 .recipe-cards {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25% min-content;
+    grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: auto;
     margin-left: 60px;
     margin-right: 60px;
@@ -120,9 +134,9 @@ html * {
     border-style: none;
     border-radius: 20px;
     max-width: 250px;
-    /* width: 300px; 
+    /* width: 300px;  */
     height: 250px; 
-    object-fit: cover; */
+    object-fit: cover;
 }
 
 .recipe-image:hover {

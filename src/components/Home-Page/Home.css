@@ -47,9 +47,10 @@
 #cook-text {
     font-size: 3vw;
     font-family: "Manrope", Helvetica, sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     color: white;
     margin-top: 20px;
+    letter-spacing: 2px;
     /* margin-left: 20px; */
 }
 

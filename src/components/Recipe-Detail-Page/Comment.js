@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import EditComment from './EditComment'
 
 export default function Comment(props) {
     console.log(props)
@@ -8,12 +9,16 @@ export default function Comment(props) {
 
     const updateComment = (e) => {
         e.preventDefault()
-        props.handleUpdate()
+        return <EditComment 
+            editForm={editForm}
+            setEditForm={setEditForm}
+            comment={props.comment}
+        />
     }
 
     const deleteComment = (e) => {
         e.preventDefault()
-        props.handleDelete()
+        props.handleDelete(props.comment.id)
     }
 
     return (

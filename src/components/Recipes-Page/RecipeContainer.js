@@ -4,12 +4,13 @@ import AddRecipe from './AddRecipe'
 // import { Link } from 'react-router-dom'
 import './Recipes.css'
 import LoadingBar from './LoadingBar';
+import Search from './Search'
 
 export default function RecipeContainer() {
     const [state, setState] = useState([]);
     const [recipeForm, setRecipeForm] = useState(false);
-    // const [recipeId, setRecipeId] = useState("");
     const [loadBarOn, setLoadBarOn] = useState(false);
+    const [query, setQuery] = useState("")
 
     const [formState, setFormState] = useState({
         image: "",
@@ -63,16 +64,21 @@ export default function RecipeContainer() {
 
     const activateLoadBar = () => {
         // return <LoadingBar />
-        console.log("hi")
+        console.log("load bar activated")
         setLoadBarOn(true)
     }
+
+    const handleSetQuery = (query) => {
+        setQuery(query)
+        {query.length > 0 && setState(state.filter(recipe => recipe.title.includes(query)))}
+      }
 
     return (
         <div className="recipes-container">
             <div id="spacer" />
             <img src=""></img>
             <p id="all-recipes-header">All Recipes</p>
-            {/* <LoadingBar /> */}
+            {/* <Search query={query} handleSetQuery={handleSetQuery} key={query} /> */}
             <section className="recipe-cards">
                 {state.length > 0 && renderRecipe()}
             </section>

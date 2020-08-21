@@ -211,6 +211,7 @@ export default function AddRecipe(props) {
                         <br id="break"/>
                         <input type="submit" className="buttons"/>
                     </form>
+                    {props.loadBarOn ? <LoadingBar /> : null}
                     <button
                         type="button"
                         onClick={displayFormHandler}
@@ -218,7 +219,6 @@ export default function AddRecipe(props) {
                     >
                         Cancel
                     </button>
-                    {props.loadBarOn ? <LoadingBar /> : null}
                 </div>
                 ) : (
                 <button
