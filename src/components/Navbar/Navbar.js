@@ -37,8 +37,10 @@ export default function Navbar(props) {
         return <>
             <a href="/home"><img src="https://res.cloudinary.com/hsk23/image/upload/v1597638788/Food%20Feed/foodfeed_logo_white.001_w5kwhm.png" alt="food-feed"></img></a>
             <br/>
-            <Link to="/login" className="nav-button" onClick={handleLoginClick}>Log In</Link>
-            <Link to="/signup" className="nav-button" onClick={handleSignupClick}>Sign Up</Link>
+            <section id="nav-buttons">
+                <Link to="/login" className="nav-button" onClick={handleLoginClick}>Log In</Link>
+                <Link to="/signup" className="nav-button" onClick={handleSignupClick}>Sign Up</Link>
+            </section>
         </>
     }
  
