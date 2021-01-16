@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import EditComment from './EditComment'
 
 export default function Comment(props) {
-    console.log(props)
+    // console.log(props)
     const [editForm, setEditForm] = useState({
         content: ""
     })

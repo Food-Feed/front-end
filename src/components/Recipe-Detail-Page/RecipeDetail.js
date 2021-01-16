@@ -31,7 +31,7 @@ export default function RecipeDetail(props) {
             setState(recipeObj);
           });
     }, []);
-    console.log(state)
+    // console.log(state)
 
     // **** VOICE COMMAND SECTION **** //
 
@@ -69,7 +69,7 @@ export default function RecipeDetail(props) {
     ]
 
     const { transcript, resetTranscript } = useSpeechRecognition({ commands })
-    console.log(transcript)
+    // console.log(transcript)
 
     if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
         return null

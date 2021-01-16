@@ -47,7 +47,7 @@ export default function RecipeContainer() {
             .then(r => r.json())
             .then(recipesArray => {
                 setState(recipesArray)
-                console.log(recipesArray)
+                // console.log(recipesArray)
             });
     }, []);
 

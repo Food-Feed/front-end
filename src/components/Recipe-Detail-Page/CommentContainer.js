@@ -31,7 +31,7 @@ export default function CommentContainer(props) {
             .then(comments => {
                 const filteredComments = comments.filter(comment => comment.recipe_id === current_recipe_id)
                 setState(filteredComments)
-                console.log(filteredComments)
+                // console.log(filteredComments)
             })
     }, [props]);
 
@@ -61,8 +61,8 @@ export default function CommentContainer(props) {
         })
           .then((r) => r.json())
           .then(deletedComment => {
-            console.log(deletedComment)
-            console.log(state)
+            // console.log(deletedComment)
+            // console.log(state)
             const updatedComments = state.filter(comment => comment.id !== deletedComment.id)
             setState(updatedComments)
           })
@@ -82,7 +82,7 @@ export default function CommentContainer(props) {
         })
         .then((r) => r.json())
         .then((newComment) => {
-            console.log(newComment);
+            // console.log(newComment);
             // props.setState((prevState => [...prevState, ]))
             // debugger
             setState((prevState) => ({

@@ -5,19 +5,19 @@ import './RecipeDetail.css'
 
 export default function AddComment(props) {
     const [state, setState] = useState({})
-    console.log(props.recipe)
+    // console.log(props.recipe)
     const recipe = props.recipe
 
     const changeHandler = (e) => {
         e.persist();
         setState({recipe_id: recipe.id, content: e.target.value})
         props.setFormState(state);
-        console.log(props.formState);
+        // console.log(props.formState);
     };
 
     const handleCommentCreation = (e) => {
         e.preventDefault();
-        console.log("comment state", props.formState)
+        // console.log("comment state", props.formState)
         const token = localStorage.getItem("token")
 
         fetch("http://localhost:3000/comments", {
@@ -31,12 +31,12 @@ export default function AddComment(props) {
         })
             .then((r) => r.json())
             .then((newComment) => {
-                console.log(newComment)
+                // console.log(newComment)
                 props.renderNewComment((prevState => [...prevState, newComment]))
             });
         props.setFormState({recipe_id: props.recipe.id, content: ""});
         setState({recipe_id: props.recipe.id, content: ""});
-        console.log(props.recipe.comments)
+        // console.log(props.recipe.comments)
     };
 
         return (

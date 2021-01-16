@@ -38,7 +38,7 @@ function App() {
     .then(r => r.json())
     .then(data => {
       setUser(data)
-      console.log(data)
+      // console.log(data)
     })
   }
 
@@ -51,7 +51,7 @@ function App() {
     setForm(input)
   }
 
-  console.log(user)
+  // console.log(user)
 
   const handleLogout = () => {
     setUser({})
