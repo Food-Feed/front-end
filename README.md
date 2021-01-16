@@ -8,7 +8,7 @@ FoodFeed is a recipe app aimed at home chefs, providing recipe inspiration and a
 <img src="https://res.cloudinary.com/hsk23/image/upload/v1610760459/Food%20Feed/Screen_Shot_2021-01-15_at_5.27.11_PM_rbxeh5.png" alt="foodfeed_recipes_page">
 <img src="https://res.cloudinary.com/hsk23/image/upload/v1610760459/Food%20Feed/Screen_Shot_2021-01-15_at_5.28.02_PM_d2ebqa.png" alt="foodfeed_recipe_detail">
 
-### Getting Started:  
+### Getting Started
 1. Clone both the [frontend](https://github.com/Food-Feed/front-end) and the [backend](https://github.com/Food-Feed/back-end) repositories. 
 ```
 $ git clone https://github.com/Food-Feed/front-end
@@ -35,7 +35,7 @@ $ rails s
 $ npm start
 ```
 
-### Prerequisites:
+### Prerequisites
 - Ruby on Rails
 - VS code with [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension
 - PostgreSQL
