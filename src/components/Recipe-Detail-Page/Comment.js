@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import EditComment from './EditComment'
 
 export default function Comment(props) {
-    console.log(props)
+    // console.log(props)
     const [editForm, setEditForm] = useState({
         content: ""
     })
@@ -28,9 +28,9 @@ export default function Comment(props) {
             {/* <p>{props.comment.created_at.split("T")[0]}</p> */}
             {props.user.id === props.comment.user_id && (
                 <>
-                <button onClick={updateComment} className="buttons"><img src="https://res.cloudinary.com/hsk23/image/upload/v1597717386/Food%20Feed/edit-new-icon-22_if53kc.png" width="20%"/></button>
-                <button onClick={deleteComment} className="buttons"><img src="https://res.cloudinary.com/hsk23/image/upload/v1597717386/Food%20Feed/3058-200_gkxsdp.png" width="20%"/></button>
-              </>
+                    <button onClick={updateComment} className="buttons"><img src="https://res.cloudinary.com/hsk23/image/upload/v1597717386/Food%20Feed/edit-new-icon-22_if53kc.png" width="20%"/></button>
+                    <button onClick={deleteComment} className="buttons"><img src="https://res.cloudinary.com/hsk23/image/upload/v1597717386/Food%20Feed/3058-200_gkxsdp.png" width="20%"/></button>
+                </>
             )}
             <hr/>
         </div>

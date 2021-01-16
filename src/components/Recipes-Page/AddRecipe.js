@@ -99,8 +99,8 @@ export default function AddRecipe(props) {
     const handleRecipeCreation = (e) => {
         props.activateLoadBar()
         e.preventDefault();
-        console.log("ingredients state", ingredientState)
-        console.log("recipe state", props.formState)
+        // console.log("ingredients state", ingredientState)
+        // console.log("recipe state", props.formState)
         const token = localStorage.getItem("token")
 
         const form = new FormData()
@@ -119,7 +119,7 @@ export default function AddRecipe(props) {
         })
             .then((r) => r.json())
             .then((newRecipe) => {
-                console.log(newRecipe)
+                // console.log(newRecipe)
                 props.renderNewRecipe((prevState => [newRecipe, ...prevState]))
                 props.setRecipeForm(false);
             });

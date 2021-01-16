@@ -11,6 +11,7 @@ export default function Signup(props) {
 
     const handleUsernameChange = (evt) => {
         setUsername(evt.target.value)
+        console.log(evt.target.value)
     }
 
     const handlePasswordChange = (evt) => {
@@ -44,6 +45,7 @@ export default function Signup(props) {
         })
         .then(r => r.json())
         .then(data => {
+            console.log(data)
             localStorage.setItem("token", data.jwt)
             props.handleLogin(data.user)
             history.push('/home')
@@ -56,7 +58,7 @@ export default function Signup(props) {
     const formDivStyle = {
         margin: "auto",
         padding: "20px",
-        width: "80%"
+        width: "50%"
     }
     
     return(

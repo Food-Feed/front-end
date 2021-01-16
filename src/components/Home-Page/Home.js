@@ -2,7 +2,7 @@ import React from 'react'
 import './Home.css'
 
 export default function RecipeContainer(props) {
-    console.log(props);
+    // console.log(props);
 
     return (
         <div>
