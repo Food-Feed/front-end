@@ -8,23 +8,28 @@ FoodFeed is a recipe app aimed at home chefs, providing recipe inspiration and a
 
 ##### Getting Started:  
 1. Clone both the [frontend](https://github.com/Food-Feed/front-end) and the [backend](https://github.com/Food-Feed/back-end) repositories. 
-```git clone https://github.com/Food-Feed/front-end```
-```git clone https://github.com/Food-Feed/back-end```
+```git clone https://github.com/Food-Feed/front-end
+git clone https://github.com/Food-Feed/back-end```
 
 2. `cd` into the backend repository  
 3. Bundle install all necessary gems 
-```bundle install```
+```
+bundle install
 4. Create the database and the migrations, then seed the database
 ```
 rails db:create
 rails db:migrate
 rails db:seed
-```
+
 5. Start the rails server
-```rails s```
+```
+rails s
+
 6. `cd` into the frontend repository
 7. Start the app. This will open in your default browser.
-```npm start```
+```
+npm start
+```
 
 ##### Prerequisites:
 - Ruby on Rails
