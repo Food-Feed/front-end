@@ -37,7 +37,7 @@ $ npm start
 
 ### Prerequisites
 - Ruby on Rails
-- VS code with [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension
+- VS Code
 - PostgreSQL
 
 ### Features
@@ -51,6 +51,10 @@ $ npm start
 ### In Progress Features
 - Signup, implementing with jwt authentication
 - Edit comments they added on recipes
+- Recipe ratings
+- Recipe average cook time
+- Favorites bar
+- Add/edit form styling
 
 ### Tech Stack
 - React.js

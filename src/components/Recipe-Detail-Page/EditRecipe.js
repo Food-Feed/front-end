@@ -128,7 +128,7 @@ export default function EditRecipe(props) {
         <>
             {editRecipeForm ? (
                 <div className="modal">
-                    <h1 id="edit-form-title">Edit Recipe</h1>
+                    <h1 id="main-form-title">Edit Recipe</h1>
                     <form onSubmit={handleRecipeUpdate}>
                         {/* <label>Image Upload:</label>
                         <input type="file" name="image" onChange={changeHandlerFiles} value={state.image}/>
@@ -136,10 +136,10 @@ export default function EditRecipe(props) {
                         <label>Video Upload</label>
                         <input type="file" name="video" onChange={changeHandlerFiles} value={state.video}/>
                         <br/> */}
-                        <label id="form-section-title">Title:</label><br/>
+                        <label class="form-section-title">Title:</label><br/>
                         <input type="text" name="title" onChange={changeHandler} value={state.title} className="form-field-ingred"/>
                         <br/>
-                        <label id="form-section-title">Ingredients:</label>
+                        <label class="form-section-title">Ingredients:</label>
                         {state.ingredients.map((ingredient, index) => (
                             <Fragment key={`${ingredient}~${index}`}>
                                 <div>
@@ -171,7 +171,7 @@ export default function EditRecipe(props) {
                         ))}
                         {/* <input type="textarea" name="ingredients" onChange={changeHandler} value={state.ingred_list}/> */}
                         <br/>
-                        <label id="form-section-title">Directions:</label>
+                        <label class="form-section-title">Directions:</label>
                         {state.recipe_steps.map((recipe_step, index) => (
                             <Fragment key={`${recipe_step}~${index}`}>
                                 <div>
@@ -204,13 +204,14 @@ export default function EditRecipe(props) {
                         {/* <input type="textarea" name="recipe_steps" onChange={changeHandler} value={state.description}/> */}
                         <br/>
                         <input type="submit" className="buttons"/>
+                        <button
+                            onClick={displayFormHandler}
+                            className="buttons"
+                        >
+                            Cancel
+                        </button>
                     </form>
-                    <button
-                        onClick={displayFormHandler}
-                        className="buttons"
-                    >
-                        Cancel
-                    </button>
+                    
                 </div>
                 ) : (
                 <button

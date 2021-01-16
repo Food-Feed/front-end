@@ -5,11 +5,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    /* background-color: #a16871; */
     background-color: black;
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 100;
 }
 
 .nav img {
@@ -37,10 +36,8 @@
     background-color: rgba(255, 255, 255, 0.144);
     padding: 8px 15px;
     border-radius: 20px;
-    margin: 2px;
+    margin: 2px 17px 2px 2px;
     color: white;
-    font-weight: bold;
-    margin-right: 15px;
     font-size: .9rem;
     font-family: "Manrope", Helvetica, sans-serif;
     font-weight: 600;

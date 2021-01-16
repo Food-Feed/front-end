@@ -14,12 +14,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 100px;
+    margin: 100px 0 0 0;
 }
 
 .footer a {
     color: black;
-    margin-right: 10px;
+    margin: 0 10px 0 0;
     align-self: right;
 }
 

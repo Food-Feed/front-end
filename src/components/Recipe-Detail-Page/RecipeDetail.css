@@ -35,15 +35,13 @@ html * {
     grid-row-start: 2;
     grid-row-end: 3;
     text-align: left;
-    margin-left: 60px;
-    /* margin-top: 30px; */
+    margin: 0 0 0 60px;
     color: black;
 }
 
 #recipe-author {
     text-align: left;
-    margin-left: 60px;
-    /* margin-top: -30px;  */
+    margin: 0 0 0 60px;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 3;
@@ -70,8 +68,7 @@ video {
     grid-row-start: 4;
     grid-row-end: 5;
     width: 200px;
-    margin-left: 50px;
-    margin-bottom: 5px;
+    margin: 0 0 5px 50px;
     align-self: end;
     background-color: #b9b9b980;
     padding: 10px 12px;
@@ -81,7 +78,6 @@ video {
     font-weight: 700;
     font-size: 1rem;
     cursor: pointer;
-    align-content: center;
 }
 
 .voice-button:hover {
@@ -113,14 +109,6 @@ video {
     margin: 20px 0 50px 0;
 }
 
-/* 
-.ingredients-container {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 4;
-    grid-row-end: 6;
-} */
-
 #ingredients-title {
     text-align: left;
     font-size: 2vw;
@@ -134,9 +122,7 @@ video {
 }
 
 #ingredient {
-    /* background-color: white; */
-    margin-bottom: 5px;
-    /* padding: 5px 10px; */
+    margin: 0 0 5px 0;
 }
 
 #recipe-ingred-list {
@@ -194,7 +180,7 @@ video {
     font-size: 1rem;
     cursor: pointer;
     justify-self: end;
-    margin-right: 20px;
+    margin: 0 20px 0 0;
 }
 
 .buttons img {
@@ -208,63 +194,6 @@ video {
 }
 
 
-/* EDIT FORM SECTION */
-.modal {
-    display: block; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(255, 255, 255); /* Fallback color */
-    background-color: rgba(255, 255, 255, 0.774); /* Black w/ opacity */
-    padding: 20px;
-    padding-left: 60px;
-    text-align: left;
-    margin: 0 500px;
-}
-
-#edit-form-title {
-    font-family: "Manrope", Helvetica, sans-serif;
-    font-weight: 800;
-    font-size: 2.5rem;
-    margin-top: 90px;
-    /* background: white; */
-}
-
-#form-section-title{
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-
-#ingred_detail {
-    text-align: left;
-}
-
-.form-field-ingred {
-    background-color: black;
-    color: white;
-    border-style: none;
-    padding: 10px;
-    margin: 5px;
-    width: 500px;
-}
-
-.form-field-step {
-    background-color: black;
-    color: white;
-    border-style: none;
-    padding: 10px;
-    margin: 5px;
-    width: 500px;
-    height: 100px;
-    /* height: 200px; */
-    /* text-: wrap; */
-}
-
-
 /* COMMENTS SECTION */
 
 .comment-container {
@@ -272,7 +201,7 @@ video {
     grid-column-end: 2;
     grid-row-start: 6;
     grid-row-end: 8;
-    margin: 20px 0 20px 0;
+    margin: 20px 0;
     width: 400px;
     padding: 30px;
     background-color: rgba(0, 0, 0, 0.055);
@@ -282,9 +211,7 @@ video {
 
 .form {
     width: 100%;
-    margin-top: 30px;
-    /* margin-left: 30px; */
-    /* margin: 30px 0 60px 30px; */
+    margin: 30px 0 0 0;
 }
 
 .comment {
@@ -301,16 +228,14 @@ video {
     grid-row-start: 6;
     grid-row-end: 7;
     text-align: left;
-    /* margin-left: 60px; */
     font-size: 2vw;
     font-weight: 700;
     align-self: end;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
 }
 
 #comments-list {
     text-align: left;
-    /* margin-left: 60px; */
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 7;

@@ -130,18 +130,18 @@ export default function AddRecipe(props) {
         <>
             {props.recipeForm ? (
                 <div className="modal">
-                    <h1 id="edit-form-title">New Recipe</h1>
+                    <h1 id="main-form-title">New Recipe</h1>
                     <form onSubmit={handleRecipeCreation}>
-                        <label id="form-section-title">Image Upload:</label><br/>
+                        <label class="form-section-title">Image Upload:</label><br/>
                         <input type="file" name="image" onChange={changeHandlerFiles} className="upload-buttons"/>
                         <br id="break"/>
-                        <label id="form-section-title">Video Upload</label><br/>
+                        <label class="form-section-title">Video Upload:</label><br/>
                         <input type="file" name="video" onChange={changeHandlerFiles} className="upload-buttons"/>
                         <br id="break"/>
-                        <label id="form-section-title">Title:</label><br/>
+                        <label class="form-section-title">Title:</label><br/>
                         <input type="text" name="title" onChange={changeHandler} className="form-field-ingred"/>
                         <br id="break"/>
-                        <label id="form-section-title">Ingredients:</label>
+                        <label class="form-section-title">Ingredients:</label>
                         {ingredientState.map((ingredient, index) => (
                             <Fragment key={`${ingredient}~${index}`}>
                                 <div>
@@ -175,7 +175,7 @@ export default function AddRecipe(props) {
                         ))}
                         {/* <input type="textarea" name="ingred_list" onChange={changeHandler}/> */}
                         <br id="break"/>
-                        <label id="form-section-title">Directions:</label>
+                        <label class="form-section-title">Directions:</label>
                         {recipeStepState.map((recipe_step, index) => (
                             <Fragment key={`${recipe_step}~${index}`}>
                                 <div>
@@ -210,15 +210,16 @@ export default function AddRecipe(props) {
                         {/* <input type="textarea" name="description" onChange={changeHandler}/> */}
                         <br id="break"/>
                         <input type="submit" className="buttons"/>
+                        <button
+                            type="button"
+                            onClick={displayFormHandler}
+                            className="buttons"
+                        >
+                            Cancel
+                        </button>
                     </form>
                     {props.loadBarOn ? <LoadingBar /> : null}
-                    <button
-                        type="button"
-                        onClick={displayFormHandler}
-                        className="buttons"
-                    >
-                        Cancel
-                    </button>
+                    
                 </div>
                 ) : (
                 <button
